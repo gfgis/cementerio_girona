@@ -1,0 +1,45 @@
+body {
+    margin: 0;
+}
+
+#map {
+    height: 100%;
+    width: 100%;
+    background-color: #ffffff
+}
+.panelTopIzquierdo{
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 200px;
+    z-index: 1000;
+    background-color: rgba(255,255,255, 0.9);
+    padding: 10px;
+    font-size: 20px;
+    color: #bf2626;
+    border-radius: 5px;
+
+}
+
+.panelTopIzquierdo input{
+    cursor: pointer;
+    width: 95%;
+}
+
+.panelTopIzquierdo label{
+    font-size:0.85em;
+}
+
+.panelTitulo{
+    position: absolute;
+    top: 5px;
+    left: 40%;
+    z-index: 5;
+    background-color: white;
+    padding: 20px;
+    border-radius: 4px;
+    opacity: 0.9;
+    font-size: 22px;
+    color: darkslategrey;
+
+}
