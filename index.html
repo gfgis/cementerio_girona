@@ -70,62 +70,8 @@
 
           map.setPaintProperty('sky', 'sky-atmosphere-sun', sunPos);
         }
-        // var sunTimeLabels = [
-        //     'sunriseEnd',
-        //     'goldenHourEnd',
-        //     'solarNoon',
-        //     'goldenHour',
-        //     'sunsetStart'
-        // ];
-        // var sunTimes = SunCalc.getTimes(
-        //     Date.now(),
-        //     map.getCenter().lat,
-        //     map.getCenter().lng
-        // );
-        // sunTimeLabels.forEach(function (btnId) {
-        //     document.getElementById(btnId).addEventListener('click', function () {
-        //         var sunPos = getSunPosition(sunTimes[btnId]);
-        //         updateSunPosition(sunPos);
-        //     });
-        // });
 
-        // var date = new Date();
-        // // set up event listeners for the buttons to update
-        // // the position of the sun as you change time
-        // document
-        //     .getElementById('next30mins')
-        //     .addEventListener('click', function () {
-        //         date.setTime(date.getTime() + 30 * 60 * 1000);
-        //         var sunPos = getSunPosition(date);
-        //         updateSunPosition(sunPos);
-        //     });
-        // document
-        //     .getElementById('prev30mins')
-        //     .addEventListener('click', function () {
-        //         date.setTime(date.getTime() - 30 * 60 * 1000);
-        //         var sunPos = getSunPosition(date);
-        //         updateSunPosition(sunPos);
-        //     });
-        // document
-        //     .getElementById('next30days')
-        //     .addEventListener('click', function () {
-        //         date.setMonth(date.getMonth() + 1);
-        //         var sunPos = getSunPosition(date);
-        //         updateSunPosition(sunPos);
-        //     });
-        // document
-        //     .getElementById('prev30days')
-        //     .addEventListener('click', function () {
-        //         date.setMonth(date.getMonth() - 1);
-        //         var sunPos = getSunPosition(date);
-        //         updateSunPosition(sunPos);
-        //     });
-        // document.getElementById('getlocal').addEventListener('click', function () {
-        //     date = new Date();
-        //     var sunPos = getSunPosition(date);
-        //     updateSunPosition(sunPos);
-        // });
-
+        // Segun la hora del dia muestra el color del cielo
         function getSunPosition(date) {
           var center = map.getCenter();
           var sunPos = SunCalc.getPosition(
@@ -141,8 +87,8 @@
         add3D();
       })
 
+      // Esconde el div o lo muestra segun el zoom
       map.on('zoom', function () {
-        //console.log(map.getZoom());
         var div = document.querySelector('.panelTitulo');
         if (map.getZoom() > 17) {
           div.style.display = 'none';
@@ -152,16 +98,12 @@
       })
 
     }
-
-
-
   </script>
 </head>
 
 <body onload="init()">
   <div class="panelTitulo">Cementerio Municipal de Girona</div>
   <div id="map"></div>
-
 </body>
 
 </html>

@@ -2,18 +2,17 @@ function addCementerioCapa() {
 
     map.addSource("cementerio_source", {
         "type": "vector",
-        "url": "mapbox://giuls0917.bd0ozjsl"  // Nuestor ID Tileset
+        "url": "mapbox://giuls0917.bd0ozjsl"
 
-    }); //fin map source
+    });
 
     map.addLayer({
         "id": "cementerio",
         "type": "fill-extrusion",
         "source": "cementerio_source",
-        "source-layer": "cemgi_extrusion-cy1az7", // Nuestro nombre Tileset
+        "source-layer": "cemgi_extrusion-cy1az7",
         "maxzoom": 22,
         "minzoom": 17,
-        // "filter": [">", "numberOfFl", 0],
         "paint": {
             "fill-extrusion-color": [
                 "interpolate", ["linear"], ["number", ["get", "extrusion"]],
@@ -38,10 +37,9 @@ function addCementerioCapa() {
             "fill-extrusion-opacity": 0.8
         }
     }
-        //,"road-label"
     );
 
-} //fin funcion
+}
 function add3D() {
 
     map.addSource('mapbox-dem', {
